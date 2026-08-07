@@ -35,17 +35,13 @@ assets_raw/        Original, unprocessed source photos and the source CV — kep
 Every page shares the same header/nav/footer markup (13 nav items, one page per section) and
 loads the same `assets/css/site.css` / `assets/js/site.js`.
 
-## Before you publish
+## Publish status
 
-1. **Set the real GitHub Pages URL.** Search the project for `REPLACE-USERNAME` and
-   replace it with your actual GitHub username (or custom domain) in every `.html` page's
-   `<link rel="canonical">`, plus `robots.txt` and `sitemap.xml`.
-   These feed the canonical URL, Open Graph tags, and sitemap.
-2. If you'll use a **custom domain**, add a `CNAME` file at the repo root containing just
-   the domain (e.g. `shovarani.com`), and update the URLs above to match.
-3. Double-check `assets_raw/` — it holds your original CV and untouched photos. Decide
-   whether to keep it in the public repo or exclude it (e.g. via `.gitignore`) if you'd
-   rather not publish the raw files.
+- Live at: https://shovarani-buet.github.io/shovarani-buet/
+- Canonical URLs, Open Graph tags, `robots.txt`, and `sitemap.xml` already point there.
+- If you'll use a **custom domain**, add a `CNAME` file at the repo root containing just
+  the domain (e.g. `shovarani.com`), and update the URLs above to match.
+- `assets_raw/` still holds the original CV and untouched photos, published as-is in the repo.
 
 ## Common updates
 
