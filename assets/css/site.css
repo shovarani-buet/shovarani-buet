@@ -1,5 +1,5 @@
 /* =========================================================================
-   Shova Rani — Academic Portfolio
+   Shova Rani, Academic Portfolio
    Design system: typographic, hairline-rule academic aesthetic.
    No frameworks. No third-party requests. Custom properties drive theming.
    ========================================================================= */
@@ -102,7 +102,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 * { margin: 0; }
 /* Prevent flex/grid items from refusing to shrink below their content's
-   min-content width — the #1 cause of silent horizontal overflow on mobile. */
+   min-content width, the #1 cause of silent horizontal overflow on mobile. */
 * { min-width: 0; }
 html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: smooth; }
 html, body { overflow-x: hidden; max-width: 100%; }
@@ -165,7 +165,7 @@ blockquote,
   -webkit-hyphens: auto;
 }
 
-/* Short strings look worse justified (huge gaps) — keep these ragged-left. */
+/* Short strings look worse justified (huge gaps), keep these ragged-left. */
 .nav-list a,
 .nav-drawer-panel a,
 .btn,
@@ -421,23 +421,9 @@ a.link:hover { text-decoration-color: currentColor; }
 }
 .hero-meta strong { color: var(--ink-2); font-weight: 600; }
 
-.interest-tags {
-  text-align: justify;
-  text-justify: inter-word;
-  margin-bottom: 1rem;
-}
-.interest-tags::after { content: ""; display: inline-block; inline-size: 100%; }
-.interest-tags li {
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0 0 0.5rem;
-  font-size: 0.82rem;
-  font-weight: 600;
-  padding: 0.35rem 0.7rem;
-  border: 1px solid var(--rule-strong);
-  border-radius: 999px;
-  color: var(--ink-2);
-}
+.interest-tags { margin-bottom: 1rem; }
+.interest-tags li { display: inline; font-size: 0.92rem; color: var(--ink-2); }
+.interest-tags li:not(:last-child)::after { content: ", "; }
 
 .hero-bio { color: var(--ink-2); margin-bottom: 1.6rem; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-top: auto; }
@@ -466,13 +452,7 @@ a.link:hover { text-decoration-color: currentColor; }
 /* -------------------------------------------------------------------------
    Academics
    ------------------------------------------------------------------------- */
-.edu-card {
-  border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  background: var(--surface);
-  padding: 1.5rem 1.6rem;
-  margin-top: 0.9rem;
-}
+.edu-card { margin-top: 0.9rem; }
 .edu-facts { display: grid; grid-template-columns: 150px 1fr; row-gap: 0; }
 .edu-facts dt {
   color: var(--muted); font-size: 0.86rem;
@@ -535,38 +515,20 @@ a.link:hover { text-decoration-color: currentColor; }
   gap: 1.25rem;
   margin-top: 1.5rem;
 }
-.supervisor-card {
-  border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  padding: 1.15rem 1.25rem;
-  background: var(--surface);
-}
-.supervisor-avatar {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: auto; height: auto;
-  min-width: 2.6rem; min-height: 2.6rem;
-  padding: 0.3rem 0.9rem;
-  border-radius: 999px;
-  background: var(--accent-soft);
-  color: var(--accent-ink);
-  font-family: var(--font-serif); font-weight: 650; font-size: 0.82rem;
-  white-space: nowrap;
-  margin-bottom: 0.75rem;
-}
+.supervisor-card { border-top: 1px solid var(--rule); padding: 1rem 0 0; }
+.supervisor-avatar { display: block; color: var(--muted); font-style: italic; font-size: 0.86rem; margin-bottom: 0.35rem; }
 .supervisor-label { margin-bottom: 0.85rem; }
 .supervisor-card h4 { font-size: 0.98rem; margin-bottom: 0.1rem; }
 .supervisor-card .role { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.5rem; }
 .supervisor-card .link { font-size: 0.82rem; }
 
 .field-photo { margin-top: 2.5rem; }
-.field-photo figure { border: 1px solid var(--rule); }
+.field-photo figure { margin: 0; }
 .field-photo img { width: 100%; }
 .field-photo figcaption {
-  padding: 0.7rem 0.9rem;
+  padding: 0.5rem 0 0;
   font-size: 0.84rem;
   color: var(--muted);
-  border-top: 1px solid var(--rule);
-  background: var(--surface-2);
 }
 
 /* -------------------------------------------------------------------------
@@ -597,18 +559,7 @@ a.link:hover { text-decoration-color: currentColor; }
 .tl-item h4 { margin-bottom: 0.2rem; }
 .tl-org { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.35rem; }
 .tl-desc { color: var(--ink-2); font-size: 0.93rem; }
-.tl-tag {
-  display: inline-block;
-  font-size: 0.72rem;
-  font-weight: 650;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: 0.18rem 0.55rem;
-  border-radius: 999px;
-  background: var(--accent-soft);
-  color: var(--accent-ink);
-  margin-bottom: 0.4rem;
-}
+.tl-tag { display: block; font-size: 0.86rem; font-style: italic; color: var(--muted); margin-bottom: 0.3rem; }
 
 /* -------------------------------------------------------------------------
    Publications
@@ -625,14 +576,8 @@ a.link:hover { text-decoration-color: currentColor; }
   padding-bottom: 0.75rem;
   border-bottom: 1px solid var(--rule);
 }
-.pub-card {
-  border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  background: var(--surface);
-  padding: 1.4rem 1.5rem;
-  margin-top: 0.9rem;
-}
-.pub-group .pub-card:first-child { margin-top: 0; }
+.pub-card { border-top: 1px solid var(--rule); padding: 1.2rem 0; }
+.pub-group .pub-card:first-child { border-top: none; padding-top: 0; }
 .pub-card-head {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -645,17 +590,14 @@ a.link:hover { text-decoration-color: currentColor; }
 .pub-venue { font-size: 0.85rem; color: var(--muted); }
 .pub-actions { display: flex; flex-direction: column; gap: 0.45rem; align-items: flex-end; }
 .status-pill {
-  font-size: 0.72rem;
-  font-weight: 650;
-  letter-spacing: 0.03em;
-  padding: 0.24rem 0.6rem;
-  border-radius: 999px;
+  font-size: 0.82rem;
+  font-style: italic;
   white-space: nowrap;
 }
-.status-published { background: var(--status-published-bg); color: var(--status-published-fg); }
-.status-review { background: var(--status-review-bg); color: var(--status-review-fg); }
-.status-poster { background: var(--status-poster-bg); color: var(--status-poster-fg); }
-.status-magazine { background: var(--status-magazine-bg); color: var(--status-magazine-fg); }
+.status-published { color: var(--status-published-fg); }
+.status-review { color: var(--status-review-fg); }
+.status-poster { color: var(--status-poster-fg); }
+.status-magazine { color: var(--status-magazine-fg); }
 .pub-links { display: flex; gap: 0.4rem; flex-wrap: wrap; justify-content: flex-end; }
 .pub-links button, .pub-links a {
   font-size: 0.78rem;
@@ -712,7 +654,7 @@ dialog.modal::backdrop { background: rgba(10, 10, 8, 0.5); backdrop-filter: blur
 /* lightbox image */
 dialog.lightbox { max-width: min(92vw, 900px); background: transparent; }
 dialog.lightbox .modal-inner { padding: 0; max-height: 88vh; }
-dialog.lightbox img { width: 100%; border-radius: var(--radius); }
+dialog.lightbox img { display: block; max-width: 100%; max-height: 78vh; width: auto; height: auto; margin-inline: auto; }
 dialog.lightbox .lb-caption { color: #fff; font-size: 0.85rem; padding: 0.75rem 0.25rem 0; }
 
 /* -------------------------------------------------------------------------
@@ -727,7 +669,7 @@ dialog.lightbox .lb-caption { color: #fff; font-size: 0.85rem; padding: 0.75rem 
   border-bottom: 1px solid var(--rule);
 }
 .project-grid--featured .project-card:last-child { border-bottom: none; padding-bottom: 0; }
-.project-media { border: 1px solid var(--rule); background: var(--surface-2); overflow: hidden; }
+.project-media { overflow: hidden; }
 .project-media img, .project-media video { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/3; }
 
 /* featured: alternate the media column left/right */
@@ -743,19 +685,11 @@ dialog.lightbox .lb-caption { color: #fff; font-size: 0.85rem; padding: 0.75rem 
   flex-direction: column;
   gap: 1rem;
 }
-.project-shot {
-  margin: 0;
-  border: 1px solid var(--rule);
-  background: var(--surface-2);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
+.project-shot { margin: 0; }
 .project-media--stack img { width: 100%; height: auto; object-fit: contain; aspect-ratio: auto; }
 .project-shot figcaption {
-  padding: 0.55rem 0.8rem;
-  border-top: 1px solid var(--rule);
-  background: var(--surface);
-  font-size: 0.78rem;
+  padding: 0.4rem 0 0;
+  font-size: 0.82rem;
   color: var(--muted);
 }
 
@@ -763,16 +697,17 @@ dialog.lightbox .lb-caption { color: #fff; font-size: 0.85rem; padding: 0.75rem 
 
 .projects-subhead { margin: 3rem 0 1.5rem; text-align: center; }
 
-.feature-list { margin: 0.35rem 0 0; padding-left: 1.05rem; list-style: disc; }
+.feature-list { margin: 0.35rem 0 0; }
 .feature-list li { color: var(--ink-2); font-size: 0.93rem; margin-bottom: 0.3rem; }
 
-.project-tag { font-size: 0.78rem; color: var(--muted); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 0.4rem; }
+.project-tag { font-size: 0.88rem; color: var(--muted); font-style: italic; margin-bottom: 0.3rem; }
 .project-body h3 { margin-bottom: 0.9rem; }
 .pmo { margin-bottom: 0.9rem; }
-.pmo dt { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-ink); margin-bottom: 0.2rem; }
+.pmo dt { font-weight: 650; color: var(--ink); margin-bottom: 0.15rem; }
 .pmo dd { color: var(--ink-2); font-size: 0.93rem; margin: 0 0 0.85rem; }
 .tech-list { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.4rem; }
-.tech-list li { font-size: 0.76rem; padding: 0.22rem 0.55rem; background: var(--surface-2); border: 1px solid var(--rule); border-radius: 3px; color: var(--muted); }
+.tech-list li { font-size: 0.86rem; color: var(--muted); }
+.tech-list li:not(:last-child)::after { content: ","; }
 .project-verify {
   margin-top: 0.8rem;
   font-size: 0.78rem;
@@ -780,18 +715,13 @@ dialog.lightbox .lb-caption { color: #fff; font-size: 0.85rem; padding: 0.75rem 
   font-style: italic;
 }
 
-/* compact tier — text-only "other projects" */
+/* compact tier, text-only "other projects" */
 .project-grid--compact {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
 }
-.project-card--compact {
-  border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  background: var(--surface);
-  padding: 1.35rem;
-}
+.project-card--compact { border-top: 1px solid var(--rule); padding: 1.1rem 0 0; }
 .project-card--compact h3 { margin-bottom: 0.9rem; font-size: 1.05rem; }
 .project-card--compact .pmo dd { font-size: 0.88rem; }
 .project-card--compact .pmo dd:last-of-type { margin-bottom: 0; }
@@ -805,8 +735,8 @@ dialog.lightbox .lb-caption { color: #fff; font-size: 0.85rem; padding: 0.75rem 
   font-weight: 600;
   padding: 0.4rem 0.85rem;
   border: 1px solid var(--rule-strong);
-  border-radius: 999px;
-  background: var(--surface);
+  border-radius: 2px;
+  background: none;
   color: var(--muted);
   transition: all var(--dur) ease;
 }
@@ -815,7 +745,7 @@ dialog.lightbox .lb-caption { color: #fff; font-size: 0.85rem; padding: 0.75rem 
 
 .award-item {
   display: grid;
-  grid-template-columns: 130px 1fr auto;
+  grid-template-columns: 130px 1fr;
   gap: 1.25rem;
   align-items: start;
   padding: 1.05rem 0;
@@ -826,8 +756,6 @@ dialog.lightbox .lb-caption { color: #fff; font-size: 0.85rem; padding: 0.75rem 
 .award-title { font-weight: 650; font-size: 0.98rem; margin-bottom: 0.15rem; }
 .award-org { font-size: 0.87rem; color: var(--muted); }
 .award-note { font-size: 0.86rem; color: var(--ink-2); margin-top: 0.3rem; }
-.award-thumb { width: 3.4rem; height: 3.4rem; border: 1px solid var(--rule); overflow: hidden; border-radius: 2px; }
-.award-thumb img { width: 100%; height: 100%; object-fit: cover; }
 .award-item[hidden] { display: none; }
 
 /* -------------------------------------------------------------------------
@@ -873,11 +801,11 @@ dialog.lightbox .lb-caption { color: #fff; font-size: 0.85rem; padding: 0.75rem 
 .gallery-teaser a:hover img { transform: scale(1.04); }
 .gallery-cta { margin-top: 1.5rem; }
 
-.gallery-page-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-.gallery-page-grid button { border: 1px solid var(--rule); overflow: hidden; padding: 0; background: var(--surface-2); text-align: left; }
-.gallery-page-grid img { width: 100%; aspect-ratio: 4/3; object-fit: cover; transition: transform 400ms ease; }
-.gallery-page-grid button:hover img { transform: scale(1.04); }
-.gallery-page-grid figcaption { padding: 0.65rem 0.8rem; font-size: 0.8rem; color: var(--muted); }
+.gallery-page-grid { columns: 3; column-gap: 1.25rem; }
+.gallery-page-grid button { display: block; width: 100%; margin: 0 0 1.5rem; padding: 0; border: none; background: none; text-align: left; break-inside: avoid; cursor: zoom-in; }
+.gallery-page-grid img { display: block; width: 100%; height: auto; }
+.gallery-page-grid button:hover img { opacity: 0.92; }
+.gallery-page-grid figcaption { padding: 0.45rem 0 0; font-size: 0.82rem; color: var(--muted); text-align: left; hyphens: none; }
 .gallery-category { margin-bottom: 3rem; }
 .gallery-category h2 { margin-bottom: 1.25rem; }
 
@@ -931,7 +859,7 @@ dialog.lightbox .lb-caption { color: #fff; font-size: 0.85rem; padding: 0.75rem 
   .leadership-grid, .story-grid { grid-template-columns: 1fr; gap: 2rem; }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
   .gallery-teaser { grid-template-columns: repeat(3, 1fr); }
-  .gallery-page-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-page-grid { columns: 2; }
   .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
   .project-grid--compact { grid-template-columns: repeat(2, 1fr); }
 }
@@ -942,8 +870,7 @@ dialog.lightbox .lb-caption { color: #fff; font-size: 0.85rem; padding: 0.75rem 
   .position { grid-template-columns: 1fr; gap: 0.3rem; }
   .position-with-photo { flex-direction: column; }
   .position-photo { width: 100%; flex-basis: auto; height: 220px; align-self: auto; }
-  .award-item { grid-template-columns: 1fr auto; }
-  .award-date { grid-row: 1; grid-column: 1 / -1; }
+  .award-item { grid-template-columns: 1fr; gap: 0.2rem; }
 }
 
 @media (max-width: 640px) {
@@ -957,7 +884,7 @@ dialog.lightbox .lb-caption { color: #fff; font-size: 0.85rem; padding: 0.75rem 
   .project-grid--compact { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem 1rem; }
   .gallery-teaser { grid-template-columns: repeat(3, 1fr); gap: 0.4rem; }
-  .gallery-page-grid { grid-template-columns: 1fr 1fr; }
+  .gallery-page-grid { columns: 1; }
   .pub-card-head { grid-template-columns: 1fr; }
   .pub-actions { align-items: flex-start; flex-direction: row; flex-wrap: wrap; }
   .pub-links { justify-content: flex-start; }

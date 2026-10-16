@@ -1,5 +1,5 @@
 /*!
- * Shova Rani — site.js
+ * Shova Rani, site.js
  * Minimal, dependency-free progressive enhancement.
  * Sections: theme toggle, mobile nav drawer, scroll-spy, abstract modal,
  * citation copy, gallery lightbox, click-to-play video, award filters.
